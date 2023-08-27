@@ -17,6 +17,8 @@ spring:
 
     config:
       import: configserver:http://localhost:9296
+    profiles:
+      active: test
 #  config:
 #    import: configserver:${CONFIG_SERVER_URL:http://localhost:9296}
 
