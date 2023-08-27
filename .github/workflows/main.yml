@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+   
+    - name: Scripts
+      run: | 
+        docker build -t authservice .
+        docker login -u suhanmhd -p dckr_pat_k95BMlf1Hfaj_qphPQSuX5Cf_y0
+        docker tag authservice suhanmhd/authtest
+        docker push suhanmhd/authtest
+        
+ 
