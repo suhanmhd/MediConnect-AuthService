@@ -22,18 +22,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v1
       with:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
       run: mvn clean install
-    - name: Scripts
-      run: | 
-        docker build -t authservice .
-        docker login -u suhanmhd -p dckr_pat_k95BMlf1Hfaj_qphPQSuX5Cf_y0
-        docker tag authservice suhanmhd/authtest
-        docker push suhanmhd/authtest
+      
+    # - name: Scripts
+    #   run: | 
+    #     docker build -t authservice .
+    #     docker login -u suhanmhd -p dckr_pat_k95BMlf1Hfaj_qphPQSuX5Cf_y0
+    #     docker tag authservice suhanmhd/authtest
+    #     docker push suhanmhd/authtest
         
     
