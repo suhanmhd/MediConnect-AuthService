@@ -66,6 +66,7 @@ public class AuthController {
     public  ResponseEntity<Map<String, String>> saveUser(@RequestBody UserData userData){
         OtpDto otpDto=authenticationService.saveUser(userData);
         Map<String, String> response = new HashMap<>();
+        System.out.println("test");
         response.put("status", "pending");
         response.put("id", otpDto.getId().toString());
         response.put("email", otpDto.getEmail().toString());
