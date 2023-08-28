@@ -134,6 +134,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>mediconnect-auth-service</finalName>
 	</build>
 
 </project>

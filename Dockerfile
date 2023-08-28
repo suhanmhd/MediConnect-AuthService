@@ -1,9 +1,7 @@
+
+
 FROM openjdk:17
-
-ARG JAR_FILE=target/*.jar
-
-COPY ${JAR_FILE} authservice.jar
-ENTRYPOINT ["java","-jar","/authservice.jar"]
-
-
 EXPOSE 8080
+
+ADD target/mediconnect-auth-service.jar mediconnect-auth-service.jar
+ENTRYPOINT ["java","-jar","/mediconnect-auth-service.jar"]
