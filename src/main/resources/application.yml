@@ -41,6 +41,8 @@ spring:
     show-sql: true
   application:
     name: AUTH-SERVICE
+
+
 eureka:
   client:
     fetch-registry: true
